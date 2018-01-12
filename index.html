@@ -44,6 +44,8 @@
             if(response.status === 'connected')
             {
               console.log('login');
+              var accessToken = response.authResponse.accessToken;
+              console.log(accessToken);
             }
             else{
               console.log('unlogin');
@@ -75,7 +77,7 @@
                 }
                 
                 for(var i=0; i<list.length; i++){
-                          code += '<tr><td>'+<img src=""+list[i].picture.data.url+"" width = 1rem height = 1rem +'</td><td>'+list[i].name+'</td></tr>';
+                          code += '<tr><td>'+'<img src='+list[i].picture.data.url+'></img>'+'</td><td>'+list[i].name+'</td></tr>';
                         }
                         document.querySelector('#result').innerHTML = '<table>'+code+'</table>'
                         
